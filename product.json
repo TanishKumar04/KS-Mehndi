@@ -1,0 +1,52 @@
+{
+    "item":[
+        {
+            "sys":{"id":1},
+            "fields":{
+                "title":"Arabic Mehndi Design",
+                "price":1500.00,
+                "image":{"fields":{"file" :{"url":"images/arabic-mehndi-desgin.jpeg"}}}
+            }
+        },
+        {
+            "sys":{"id":2},
+            "fields":{
+                "title":"Indian Mehndi Design",
+                "price":1500.00,
+                "image":{"fields":{"file" :{"url":"images/Indian-mehndi-desgin.jpeg"}}}
+            }
+        },
+        {
+            "sys":{"id":3},
+            "fields":{
+                "title":"Moroccan Mehndi Design",
+                "price":1500.00,
+                "image":{"fields":{"file" :{"url":"images/Moroccan-mehndi-desgin.jpeg"}}}
+            }
+        },
+        {
+            "sys":{"id":4},
+            "fields":{
+                "title":"Bridal Mehndi Design",
+                "price":1500.00,
+                "image":{"fields":{"file" :{"url":"images/Bridal-mehndi-desgin.jpeg"}}}
+            }
+        },
+        {
+            "sys":{"id":5},
+            "fields":{
+                "title":"Jewellery Mehndi Design",
+                "price":1500.00,
+                "image":{"fields":{"file" :{"url":"images/Jewellery-mehndi-desgin.jpeg"}}}
+            }
+        },
+        {
+            "sys":{"id":6},
+            "fields":{
+                "title":"Western-style Mehndi Design",
+                "price":1500.00,
+                "image":{"fields":{"file" :{"url":"images/Western-mehndi-desgin.jpeg"}}}
+            }
+        }
+    ]
+}
