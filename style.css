@@ -251,3 +251,97 @@ ul{
 .none{
     display: none;
 }
+
+
+@media  screen and (max-width:786px) { 
+    .logo{
+        padding-left: 0;
+    }
+    .cart{
+        padding-right: 2em;
+    }
+    .menubar{
+        display: none;
+    }
+    .burger{
+        margin-left:  2em;
+        display: block;
+    }
+    .section1 .banner h1{
+        font-size: 1.5em;
+    }
+    .banner a{
+        font-size: 0.6em;
+        padding: 1em 2em;
+    }
+    .section2 .title h1{
+        font-size: 1.5em;
+    }
+    .menu-sidebar{
+        display: block;
+        position:  fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 11;
+        background: #ececec;
+        overflow: hidden;
+        transform: translate(-100%);
+        transition: 0.3s linear;
+    }
+    .menu-menu-sidebar{
+    display: flex;
+    height: 80%;
+     justify-self: center;    
+    }
+    .menu-list{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .menu-sidebar .close-menu{
+        position: absolute;
+        right: 30px;
+        font-size: 1.4em;
+    }
+    .menu-list-items a{
+        color: #f09d51;
+    }
+    .menu-list-items a:hover{
+        color: #f57b09;
+    }
+
+}
+
+@media screen and(max-width: 480px) {
+    *{
+        font-size: 16px;
+    }
+    .section1 .banner{
+        width: 280px;
+        height: 100px;
+    }
+    .section1 .banner h1{
+        font-size: 1.2em;
+        
+    }
+
+    .burger{
+        margin-left: 1em;
+        display: block;
+        width: 30px;
+    }
+    .cart-sidebar{
+        width: 100%;
+    }
+    .product{
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
