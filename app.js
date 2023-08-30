@@ -16,7 +16,7 @@
  let buttonDOM = [];
 
  cart.addEventListener("click",function(){
-    cartSidebar.style.tranform = "translate(0%)"
+    cartSidebar.style.transform = "translate(0%)"
     const bodyOverlay = document.createElement("div")
     bodyOverlay.classList.add("overlay")
     setTimeout(function(){
@@ -25,7 +25,7 @@
 })
 
  closeCart.addEventListener("click",function(){
-    cartSidebar.style.tranform = "transalate=(100%)"
+    cartSidebar.style.transform = "translate(100%)"
     const bodyOverlay = document.querySelector(".overlay")
     document.querySelector("body").removeChild(bodyOverlay)
     
