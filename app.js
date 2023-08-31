@@ -1,7 +1,8 @@
  const cart = document.querySelector("nav .cart")
  const cartSidebar = document.querySelector(".cart-sidebar ")
  const closeCart = document.querySelector(".close-cart")
- const burger = document.querySelector(".burger")
+//  const burger = document.querySelector(".burger")
+const burger = document.querySelector(".burger");
  const menuSidebar = document.querySelector(".menu-sidebar")
  const closeMenu  = document.querySelector(".close-menu")
  const cartItemsTotal = document.querySelector("noi")
@@ -30,3 +31,18 @@
     document.querySelector("body").removeChild(bodyOverlay)
     
 })
+
+burger.addEventListener("click",function(){
+    menuSidebar.style.transform="translate(0%)"
+})
+// closeMenu.addEventListener("click",function(){
+//     menuSidebar.style.transform="translate(-100%)"
+// })
+
+burger.addEventListener("click", function() {
+    menuSidebar.style.transform = "translate(0%)";
+});
+
+closeMenu.addEventListener("click", function() {
+    menuSidebar.style.transform = "translate(-100%)";
+});
