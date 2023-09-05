@@ -92,7 +92,7 @@ ul{
 }
 
 .layer1,.layer2,.layer3{
-    background: black;
+    background: rgb(23, 22, 22);
     height: 4px;
     margin-top: 4px;
     width: 100%;
@@ -267,6 +267,8 @@ ul{
     }
     .burger{
         margin-left:  2em;
+    
+
         display: block;
     }
     .section1 .banner h1{
