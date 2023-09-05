@@ -91,13 +91,27 @@ ul{
     display: none;
 }
 
-.layer1,.layer2,.layer3{
+/* .layer1,.layer2,.layer3{
     background: rgb(23, 22, 22);
     height: 4px;
     margin-top: 4px;
     width: 100%;
     border-radius: 10pxf;    
+} */
+
+/* .burger {
+    display: block; 
+    cursor: pointer;
+} */
+
+.layer {
+    background: rgb(23, 22, 22);
+    height: 4px;
+    margin-top: 4px;
+    width: 100%;
+    border-radius: 10px;
 }
+
 
 .section1{
     height: calc(100vh - 10vh);
