@@ -27,10 +27,12 @@ ul{
 
 .logo{
     padding: 2em;
+    margin-top: 0.5em;
 }
 
 .logo-text{
     font-size: 2em;
+    margin-inline-start: 2em;
 }
 
 .menubar{
