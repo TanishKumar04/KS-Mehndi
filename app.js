@@ -54,9 +54,9 @@ class Product{
    const data = await response.json();
     let Product = data.items;
     Product = Product.map(items=>{
-        const{title,price} = item.feilds;
+        const{title,price} = item.fields;
         const{id} = item.sys;
-        const image = item.feilds.image.feilds.file.url;
+        const image = item.fields.image.fields.file.url;
         return {title,price,image};
     })
     return Product;
@@ -141,24 +141,95 @@ setCartValues(cart){
 addCartItem(CartItem){
     let cartItemUi = document.createElement("div")
     cartItemUi.innerHTML = `<div class = "cart-product">
-            <div class = "product-image"
-            <img src = "${cartItem.image} alt ="product"
-            </div>
-            <div class ="cart-product-content">
-            <div class ="cart-product-name"><h3>${cartItem.title}
-            </h3></div>
-            <div class = "cart-product-price"><h3>₹${cartItem.price}
-            </h3>
-            </div>
-            <div class ="cart-product-remove data-id="${cartItem.id}"
-            href = "#" style="color:red;">remove</a></div>
-            </div>
-            <div class ="plus-minus">
-            <i class = "fa fa-angle-left add-amount"
-            data-id="${cartItem.id}"></i>
-            `
+                            <div class = "product-image"
+                            <img src = "${cartItem.image} alt ="product"
+                            </div>
+                            <div class ="cart-product-content">
+                            <div class ="cart-product-name"><h3>${cartItem.title}
+                            </h3></div>
+                            <div class = "cart-product-price"><h3>₹${cartItem.price}
+                            </h3>
+                            </div>
+                            <div class ="cart-product-remove data-id="${cartItem.id}"
+                            href = "#" style="color:red;">remove</a></div>
+                            </div>
+                            <div class ="plus-minus">
+                            <i class = "fa fa-angle-left add-amount"
+                            data-id="${cartItem.id}"></i>
+                            <span class"no-of-items">${cartItem.amount}</spam>
+                            data-id="${cartItem.id}"</i>
+                            </div>
+                            </div>`
+                            cartContent.append(cartItemUi)
+               }              
+      setupApp(){
+        cart = storage.getCart()
+        this.setCartValues(cart)
+        cart.map((item)=>{
+          this.addCartItem(item)
+        })
+      }
+      cartLogic(){
+        clearBtn.addEventListener("click",()=>{
+          this.closeCart()
+        })
+        cartContent.addEventListener("click",(Event)=>{
+          if(Event.target.classList.contains("cart-product-remove")){
+            let id = Event.target.dataset.id
+            this.removeItem(id)
+            let div = Event.target.parentElement.parentElement.parentElement.parentElement
+            div.removeChild(Event.target.parentElement.parentElement.parentElement.parentElement)
+          
+          }
+          else if (Event.target.classList.contains("add-amount")){
+            let id = Event.target.dataset.id
+            let item = cart.find((item)=>item.id===id)
+            item.amount++
+            storage.saveCart(cart)
+            this.setCartValues(cart)
+            Event.target.nextElementSbiling.innerHTML = item.amount
+          }
+          else if (Event.target.classList.contains(reduce-amount)){
+            let id = Event.target.dataset.id
+            let item = cart.find.((item)=>item.id===id)
+          if (item.amount>1)
+            item.amount--
+          storage.saveCart(cart)
+          this.setCartValues(cart)
+          Event.target.previousElementSbiling.innerHTML = item.amount
+
+          }
+          else{
+            this.removeItem(id)
+            let div = Event.target.parentElement.parentElement.parentElement.parentElement
+            div.removeChild(Event.target.parentElement.parentElement.parentElement.parentElement)
+          }
+        })
+
+
+      }
+
+
+      addAmount(){
+        const addBtn = document.querySelectorAll(".add-amount")
+        addBtn.forEach((btn)=>{
+          btn.addEventListener("click",(Event)=>{
+            let id = (Event.currentTarget.dataset.id)
+            cart.map((item)=>{
+              if(item.id===id){
+              item.amount++
+              storage.saveCart(cart)
+              this.setCartValues(cart)
+              const amountUI = Event.currentTarget.parentElement.children[1]
+              amountUI.innerHTML = item.amount
+              }
+            })
+          })
+        })
+      }
 }
 
-  }
+
+  
   
  
