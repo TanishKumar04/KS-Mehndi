@@ -68,7 +68,7 @@ class Product{
 //     displayProducts(Product){
 //         let result = " ";
 //         Product.forEach(Product=>{
-//             const ProductDiv = document.createElement("div")
+//             const m = document.createElement("div")
 //             ProductDiv.innerHTML ='< div class = "product-cart">
 //                                     <img src ="${Product.image}" alt ="Product"></img>
 //                                     <span class = "add-to-cart" data-id="${Product.id}">
@@ -191,7 +191,7 @@ addCartItem(CartItem){
           }
           else if (Event.target.classList.contains(reduce-amount)){
             let id = Event.target.dataset.id
-            let item = cart.find.((item)=>item.id===id)
+            let item = cart.find((item)=>item.id===id)
           if (item.amount>1)
             item.amount--
           storage.saveCart(cart)
