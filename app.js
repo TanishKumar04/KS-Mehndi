@@ -293,6 +293,20 @@ class storage{
     localStorage.setItem('cart',JSON.stringify(cart))
   }
   static getCart(){
-    return  JSON.parse(localStorage.getItem('cart')) || []
+    return  localStorage.getItem('cart')? JSON.parse(localStorage.getItem("cart")):[]
   }
 }
+
+document.addEventListener("DOMContentLoaded",()=>{
+  const product = new Product();
+  const ui = new UI();
+  ui.setupApp()
+  product.getProduct().then(product=>{
+    ui.displayProducts(product)
+    storage.saveProduct(product)
+  }).then(()=>{
+    ui.getButtons();
+    ui.cartLogic();
+  })
+
+})
