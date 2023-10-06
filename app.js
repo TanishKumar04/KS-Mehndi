@@ -281,7 +281,18 @@ addCartItem(CartItem){
       }
 }
 
-
-  
-  
- 
+class storage{
+  static saveProduct(product){
+    localStorage.setItem("products", JSON.stringify(product))
+  }
+  static getStorageProducts(id){
+    let products = JSON.parse(localStorage.getItem('products'))
+    return products.find((item)=>item.id===id)
+  }
+  static saveCart(cart){
+    localStorage.setItem('cart',JSON.stringify(cart))
+  }
+  static getCart(){
+    return  JSON.parse(localStorage.getItem('cart')) || []
+  }
+}
