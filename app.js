@@ -227,6 +227,23 @@ addCartItem(CartItem){
           })
         })
       }
+      reduceAmount(){
+        const reduceBtn = document.querySelectorAll(".add-amount")
+        reduceBtn.forEach((btn)=>{
+          btn.addEventListener("click",(Event)=>{
+            let id = (Event.currentTarget.dataset.id)
+            cart.map((item)=>{
+              if(item.id===id){
+                item.amount--
+                if(item.amount>0){
+                  storage.saveCart(cart)
+                  this.setCartValues(cart)
+                }
+              }
+            })
+          })
+        })
+      }
 }
 
 
