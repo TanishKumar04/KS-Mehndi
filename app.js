@@ -270,7 +270,15 @@ addCartItem(CartItem){
 
       }
 
-      
+      getSingleButton(id){
+        let btn
+         buttonDOM.forEach((button)=>{
+          if(button.dataset.id === id){
+            btn = button
+          }
+         })
+         return btn
+      }
 }
 
 
