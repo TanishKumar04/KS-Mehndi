@@ -227,6 +227,50 @@ addCartItem(CartItem){
           })
         })
       }
+      reduceAmount(){
+        const reduceBtn=document.querySelectorAll(".reduce-amount")
+        reduceBtn.forEach((btn)=>{
+          btn.addEventListener("click",(Event)=>{
+            let id = (Event.currentTarget.dataset.id)
+            cart.map((item)=>{
+              if(item.id===id){
+                item.amount--
+                if(item.amount>0){
+                  storage.saveCart(cart)
+                  this.setCartValues(cart)
+                  const amountUI = Event.currentTarget.parentElement.children[1]
+                  amountUI.innerHTML = item.amount
+                }else{
+                  Event.currentTarget.parentElement.parentElement.parentElement.removeChild(Event.currentTarget.parentElement.parentElement)
+                  this.removeItem(id)
+                }
+              }
+            })
+        })
+      })
+
+}     
+      clearCart(){
+        let cartItem = cart.map(item=item.id)
+        cartItem.forEach((id)=>this.removeItem(id))
+        const cartProduct = document.querySelectorAll(".cart-product")
+        cartProduct.forEach((item)=>{
+          if(item){
+            item.parentElement.removeChild(item)
+          }
+        })
+      }
+      removeItem(id){
+        cart = cart.filter((item)=>item.id!==id)
+        this.setCartValues(cart)
+        storage.saveCart(cart)
+        let Button = this.getSingleButton(id)
+        button.style.pointerEvents = "unset"
+        button.innerHTML = `<i class = "fa fa-cart-plus"></i> ADD TO CART`
+
+      }
+
+      
 }
 
 
