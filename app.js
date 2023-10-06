@@ -53,11 +53,11 @@ class Product{
     const response = await fetch("Product.json")
    const data = await response.json();
     let Product = data.items;
-    Product = Product.map(items=>{
+    Product = Product.map(item=>{
         const{title,price} = item.fields;
         const{id} = item.sys;
         const image = item.fields.image.fields.file.url;
-        return {title,price,image};
+        return {title,price,image,id};
     })
     return Product;
   } 
@@ -140,26 +140,44 @@ setCartValues(cart){
 }        
 addCartItem(CartItem){
     let cartItemUi = document.createElement("div")
-    cartItemUi.innerHTML = `<div class = "cart-product">
-                            <div class = "product-image"
-                            <img src = "${cartItem.image} alt ="product"
-                            </div>
-                            <div class ="cart-product-content">
-                            <div class ="cart-product-name"><h3>${cartItem.title}
-                            </h3></div>
-                            <div class = "cart-product-price"><h3>₹${cartItem.price}
-                            </h3>
-                            </div>
-                            <div class ="cart-product-remove data-id="${cartItem.id}"
-                            href = "#" style="color:red;">remove</a></div>
-                            </div>
-                            <div class ="plus-minus">
-                            <i class = "fa fa-angle-left add-amount"
-                            data-id="${cartItem.id}"></i>
-                            <span class"no-of-items">${cartItem.amount}</spam>
-                            data-id="${cartItem.id}"</i>
-                            </div>
-                            </div>`
+      cartItemUi.innerHTML = `
+     <div class="cart-product">
+         <div class="product-image">
+             <img src="${cartItem.image}" alt="product">
+         </div>
+         <div class="cart-product-content">
+             <div class="cart-product-name"><h3>${cartItem.title}</h3></div>
+             <div class="cart-product-price"><h3>₹${cartItem.price}</h3></div>
+             <div class="cart-product-remove" data-id="${cartItem.id}" href="#" style="color:red;">remove</a></div>
+         </div>
+         <div class="plus-minus">
+             <i class="fa fa-angle-left add-amount" data-id="${cartItem.id}"></i>
+             <span class="no-of-items">${cartItem.amount}</span> <!-- Added missing closing tag -->
+         </div>
+     </div>`;
+ 
+     
+     
+    //  `<div class = "cart-product">
+    //                         <div class = "product-image"
+    //                         <img src = "${cartItem.image} alt ="product"
+    //                         </div>
+    //                         <div class ="cart-product-content">
+    //                         <div class ="cart-product-name"><h3>${cartItem.title}
+    //                         </h3></div>
+    //                         <div class = "cart-product-price"><h3>₹${cartItem.price}
+    //                         </h3>
+    //                         </div>
+    //                         <div class ="cart-product-remove data-id="${cartItem.id}"
+    //                         href = "#" style="color:red;">remove</a></div>
+    //                         </div>
+    //                         <div class ="plus-minus">
+    //                         <i class = "fa fa-angle-left add-amount"
+    //                         data-id="${cartItem.id}"></i>
+    //                         <span class"no-of-items">${cartItem.amount}</spam>
+    //                         data-id="${cartItem.id}"</i>
+    //                         </div>
+    //                         </div>`
                             cartContent.append(cartItemUi)
                }              
       setupApp(){
