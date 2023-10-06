@@ -209,7 +209,7 @@ addCartItem(CartItem){
 
       }
 
-
+//Add Amount Button
       addAmount(){
         const addBtn = document.querySelectorAll(".add-amount")
         addBtn.forEach((btn)=>{
