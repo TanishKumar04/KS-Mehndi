@@ -282,6 +282,7 @@ addCartItem(CartItem){
         cart = cart.filter((item)=>item.id!==id)
         this.setCartValues(cart)
         storage.saveCart(cart)
+        
         let Button = this.getSingleButton(id)
         button.style.pointerEvents = "unset"
         button.innerHTML = `<i class = "fa fa-cart-plus"></i> ADD TO CART`
