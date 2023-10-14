@@ -49,6 +49,10 @@ ul{
     color: black;
     font-family: sans-serif;
     font-size: 0.9em;
+    border: 1px solid #ffffff00;
+    padding: 0.5em 1.7em;
+    cursor: pointer;
+    transition: 0.3s linear;
     transition: 0.4s;
 }
 
@@ -118,7 +122,7 @@ ul{
 .section1{
     height: calc(100vh - 10vh);
     width: 100%;
-    background: url(images/mehndi\ bg.avif) center center/cover;
+    background: url(images/bg\ website.jpeg) center center/cover;
     top: 0;
     left: 0;
     z-index: -1;
@@ -128,7 +132,8 @@ ul{
     height: 200px;
     width: 800px;
     /* background: rgba(255, 255, 255, 0.7); */
-    background:rgba(247,230,223,255);
+    background:rgba(63, 102, 142, 0.916);
+    /* background:rgba(247,230,223,255); */
     position: relative;
     top: 50%;
     left: 50%;
@@ -144,6 +149,7 @@ ul{
 
 .banner h1{
     font-size: 2em;
+    justify-content: center;
 
 } 
 .banner a{
@@ -151,13 +157,13 @@ ul{
     justify-content: center;
     padding: 1em 2.5em;
     font-size: 0.8em;
-    color: white;
-    background-color: #d39d9a;
+    color: rgba(252, 252, 252, 0.937);
+    background-color: #64a9e2;
     transition: all 0.3s;
 }
 
 .banner a:hover{
-    background: #974b4a;
+    background: #a15958;
 }
 
 
@@ -223,7 +229,7 @@ ul{
 .plus-minus{
     display: flex;
     transform: rotate(90deg);
-    color: #f09d51;
+    color: #4467e6;
     font-size: 1.5em;
     cursor: pointer;
 }
